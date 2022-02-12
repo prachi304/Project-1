@@ -13,6 +13,8 @@ int main()
         else cout << "Player 1's turn\n";
         cout << "Select the row and column:\n";
         cin >> row >> col;
+        if((row<1 || row>3)||(col<1 || col>3)) cout << "\nERROR: Values lie beyond the range of 1,2,3.\n\n";
+        else{
         row--;
         col--;
         if(arr[row][col]=='O' || arr[row][col]=='X')
@@ -76,6 +78,7 @@ int main()
                     flag=1;
             }
             if(flag) break;
+        }
         }
     }while(c!=9);
     if(flag)
